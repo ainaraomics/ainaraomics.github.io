@@ -478,8 +478,12 @@ blockquote cite {
 }
 
 /* ── RESPONSIVE ── */
+/* desktop: inline */
+.mob-break { display: inline; }
+
 @media (max-width: 768px) {
   html              { scroll-snap-type: y proximity; }
+  .mob-break        { display: block; }
   nav               { padding: 16px 20px; }
   .nav-links        { gap: 16px; }
   .nav-links a      { font-size: 0.8rem; }
@@ -497,10 +501,10 @@ blockquote cite {
     right: auto;
     left: 50%;
     top: auto;
-    bottom: 24px;
+    bottom: 20px;
     transform: translateX(-50%);
-    width: 72%;
-    color: rgba(78, 205, 196, 0.13);
+    width: 75%;
+    color: rgba(78, 205, 196, 0.28);
   }
   .card-bg-seq {
     right: 0;
@@ -512,9 +516,11 @@ blockquote cite {
     padding: 16px 24px;
     font-size: 0.85rem;
     align-items: flex-end;
+    color: rgba(78, 205, 196, 0.18);
   }
 
-  /* About: single column, photo square and small */
+  /* About: single column, no forced height centering */
+  #sobre-mi         { display: block; padding: 100px 0 70px; min-height: unset; }
   .about-grid       { grid-template-columns: 1fr; gap: 28px; }
   .about-photo      { order: -1; max-width: 130px; }
   .about-photo img  { aspect-ratio: 1; }
