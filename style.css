@@ -113,9 +113,7 @@ nav {
   letter-spacing: 0.16em;
   text-transform: uppercase;
   font-weight: 600;
-  position: absolute;
-  top: 88px;
-  right: 48px;
+  margin-bottom: 28px;
 }
 
 .hero-content h1 {
@@ -281,21 +279,42 @@ nav {
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 300px;
-  gap: 88px;
+  gap: 72px;
   align-items: center;
 }
 
-.about-text h2 {
-  font-size: clamp(2rem, 4vw, 3rem);
+.about-h2 {
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
   font-weight: 800;
   color: var(--white);
-  line-height: 1.08;
-  margin-bottom: 28px;
-  letter-spacing: -0.025em;
+  line-height: 1.05;
+  margin-bottom: 36px;
+  letter-spacing: -0.03em;
+}
+
+.about-values {
+  list-style: none;
+  margin-bottom: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.about-values li {
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.about-values li::before {
+  content: '—';
+  color: var(--accent);
+  margin-right: 12px;
+  font-weight: 700;
 }
 
 .bio {
-  font-size: 0.98rem;
+  font-size: 1.05rem;
   color: rgba(255, 255, 255, 0.52);
   line-height: 1.88;
 }
@@ -308,17 +327,33 @@ nav {
   width: 100%;
   aspect-ratio: 3 / 4;
   object-fit: cover;
+  object-position: center top;
   border-radius: 14px;
   display: block;
+  filter: grayscale(100%) contrast(1.05) brightness(0.88);
+  transition: filter 0.4s ease;
+}
+
+.about-photo img:hover {
+  filter: grayscale(60%) contrast(1.05) brightness(0.92);
 }
 
 .about-photo::before {
   content: '';
   position: absolute;
-  inset: -10px;
-  border: 1px solid rgba(78, 205, 196, 0.2);
+  inset: -8px;
+  border: 1px solid rgba(78, 205, 196, 0.22);
   border-radius: 20px;
   z-index: -1;
+}
+
+.about-photo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  background: rgba(78, 205, 196, 0.06);
+  pointer-events: none;
 }
 
 /* ── TESTIMONIALS ── */
@@ -445,19 +480,39 @@ blockquote cite {
 /* ── RESPONSIVE ── */
 @media (max-width: 768px) {
   html              { scroll-snap-type: y proximity; }
-  nav               { padding: 16px 24px; }
-  #hero             { padding: 100px 6% 64px; }
+  nav               { padding: 16px 20px; }
+  .nav-links        { gap: 16px; }
+  .nav-links a      { font-size: 0.8rem; }
+
+  #hero             { padding: 100px 6% 60px; }
+  .hero-content h1  { font-size: clamp(2.8rem, 11vw, 5rem); }
+
   .container        { padding: 0 24px; }
-  .card             { padding: 80px 6%; align-items: flex-start; padding-top: 120px; }
-  .card h2          { font-size: clamp(2.5rem, 10vw, 4rem); }
-  .card-bg-num      { font-size: 55vw; }
-  .about-grid       { grid-template-columns: 1fr; gap: 40px; }
-  .about-photo      { order: -1; }
-  .about-photo img  { aspect-ratio: 1 / 1; }
-  .nav-links        { gap: 20px; }
+
+  /* Cards: hide decorative SVGs on mobile, fix padding */
+  .card             { padding: 100px 6% 60px; align-items: flex-start; }
+  .card h2          { font-size: clamp(2.2rem, 9vw, 3.5rem); }
+  .card p           { font-size: 1rem; }
+  .card-bg-deco     { display: none; }
+  .card-bg-seq      { display: none; }
+
+  /* About */
+  .about-grid       { grid-template-columns: 1fr; gap: 36px; }
+  .about-photo      { order: -1; max-width: 180px; }
+  .about-h2         { font-size: clamp(1.8rem, 7vw, 2.8rem); }
+  .bio              { font-size: 0.95rem; }
+
+  /* Testimonials */
+  #resenas h2       { font-size: clamp(1.6rem, 6vw, 2.2rem); }
+
+  /* Contact */
+  #contacto h2      { font-size: clamp(2rem, 8vw, 3rem); }
+  .link-label       { width: 60px; font-size: 0.65rem; }
 }
 
 @media (max-width: 480px) {
-  .nav-links  { display: none; }
-  .hero-pills { flex-direction: column; }
+  .nav-links        { display: none; }
+  .hero-content h1  { font-size: clamp(2.4rem, 13vw, 4rem); }
+  .card h2          { font-size: clamp(2rem, 11vw, 3rem); }
+  .contact-links a  { gap: 16px; }
 }
