@@ -489,18 +489,38 @@ blockquote cite {
 
   .container        { padding: 0 24px; }
 
-  /* Cards: hide decorative SVGs on mobile, fix padding */
-  .card             { padding: 100px 6% 60px; align-items: flex-start; }
+  /* Cards: show SVGs repositioned to bottom */
+  .card             { padding: 100px 6% 180px; align-items: flex-start; }
   .card h2          { font-size: clamp(2.2rem, 9vw, 3.5rem); }
-  .card p           { font-size: 1rem; }
-  .card-bg-deco     { display: none; }
-  .card-bg-seq      { display: none; }
+  .card p           { font-size: 1rem; max-width: 100%; }
+  .card-bg-deco {
+    right: auto;
+    left: 50%;
+    top: auto;
+    bottom: 24px;
+    transform: translateX(-50%);
+    width: 72%;
+    color: rgba(78, 205, 196, 0.13);
+  }
+  .card-bg-seq {
+    right: 0;
+    left: 0;
+    top: auto;
+    bottom: 0;
+    width: 100%;
+    height: 140px;
+    padding: 16px 24px;
+    font-size: 0.85rem;
+    align-items: flex-end;
+  }
 
-  /* About */
-  .about-grid       { grid-template-columns: 1fr; gap: 36px; }
-  .about-photo      { order: -1; max-width: 180px; }
-  .about-h2         { font-size: clamp(1.8rem, 7vw, 2.8rem); }
-  .bio              { font-size: 0.95rem; }
+  /* About: single column, photo square and small */
+  .about-grid       { grid-template-columns: 1fr; gap: 28px; }
+  .about-photo      { order: -1; max-width: 130px; }
+  .about-photo img  { aspect-ratio: 1; }
+  .about-h2         { font-size: clamp(1.8rem, 7vw, 2.8rem); margin-bottom: 20px; }
+  .about-values     { margin-bottom: 20px; }
+  .bio              { font-size: 0.93rem; }
 
   /* Testimonials */
   #resenas h2       { font-size: clamp(1.6rem, 6vw, 2.2rem); }
