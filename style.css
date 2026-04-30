@@ -467,40 +467,16 @@ blockquote cite {
 }
 
 /* ── COPY BUTTON ── */
-.contact-row {
-  display: flex;
-  align-items: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-}
-
-.contact-row:first-child {
-  border-top: 1px solid rgba(255, 255, 255, 0.07);
-}
-
-.contact-row a {
-  flex: 1;
-  border-bottom: none;
-  border-top: none;
-}
-
-.contact-row a:first-child {
-  border-top: none;
-}
-
 .copy-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 8px 10px;
+  margin-left: auto;
+  padding: 4px 8px;
   color: rgba(255, 255, 255, 0.25);
   transition: color 0.2s;
   flex-shrink: 0;
+  cursor: pointer;
 }
 
-.copy-btn:hover {
-  color: var(--accent);
-}
-
+.copy-btn:hover,
 .copy-btn.copied {
   color: var(--accent);
 }
@@ -533,31 +509,12 @@ blockquote cite {
 
   .container        { padding: 0 24px; }
 
-  /* Cards: auto height so no gap between text and SVG */
-  .card             { padding: 100px 6% 60px; align-items: flex-start; min-height: auto; }
-  .card h2          { font-size: clamp(2.2rem, 9vw, 3.5rem); }
-  .card p           { font-size: 1rem; max-width: 100%; }
-  .card-bg-deco {
-    right: auto;
-    left: 50%;
-    top: auto;
-    bottom: 20px;
-    transform: translateX(-50%);
-    width: 75%;
-    color: rgba(78, 205, 196, 0.28);
-  }
-  .card-bg-seq {
-    right: 0;
-    left: 0;
-    top: auto;
-    bottom: 0;
-    width: 100%;
-    height: 140px;
-    padding: 16px 24px;
-    font-size: 0.85rem;
-    align-items: flex-end;
-    color: rgba(78, 205, 196, 0.18);
-  }
+  /* Cards: flex-column so SVG flows naturally below text, no gap */
+  .card.snap-section  { min-height: auto; flex-direction: column; justify-content: flex-start; padding: 100px 6% 48px; }
+  .card h2            { font-size: clamp(2.2rem, 9vw, 3.5rem); }
+  .card p             { font-size: 1rem; max-width: 100%; }
+  .card-bg-deco       { position: static; width: 80%; margin: 36px auto 0; color: rgba(78, 205, 196, 0.28); transform: none; height: auto; }
+  .card-bg-seq        { position: static; width: 100%; height: 100px; margin: 36px 0 0; padding: 0; font-size: 0.8rem; color: rgba(78, 205, 196, 0.2); align-items: center; }
 
   /* About: single column, no forced height centering */
   #sobre-mi         { display: block; padding: 100px 0 70px; min-height: unset; }
@@ -569,12 +526,12 @@ blockquote cite {
   .bio              { font-size: 0.93rem; }
 
   /* Testimonials */
-  #resenas          { display: block; padding: 80px 0 60px; min-height: unset; }
-  #resenas h2       { font-size: clamp(1.6rem, 6vw, 2.2rem); }
+  #resenas.snap-section { display: block; padding: 80px 0 60px; min-height: auto; }
+  #resenas h2           { font-size: clamp(1.6rem, 6vw, 2.2rem); }
 
   /* Contact */
-  #contacto         { display: block; padding: 80px 0 60px; min-height: unset; }
-  #contacto h2      { font-size: clamp(2rem, 8vw, 3rem); }
+  #contacto.snap-section { display: block; padding: 80px 0 60px; min-height: auto; }
+  #contacto h2           { font-size: clamp(2rem, 8vw, 3rem); }
   .link-label       { width: 60px; font-size: 0.65rem; }
 }
 
