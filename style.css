@@ -123,6 +123,7 @@ nav {
   line-height: 1.0;
   margin-bottom: 28px;
   letter-spacing: -0.03em;
+  white-space: nowrap;
 }
 
 .hero-h1-sub {
@@ -465,6 +466,45 @@ blockquote cite {
   color: rgba(255, 255, 255, 0.2);
 }
 
+/* ── COPY BUTTON ── */
+.contact-row {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.contact-row:first-child {
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.contact-row a {
+  flex: 1;
+  border-bottom: none;
+  border-top: none;
+}
+
+.contact-row a:first-child {
+  border-top: none;
+}
+
+.copy-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px 10px;
+  color: rgba(255, 255, 255, 0.25);
+  transition: color 0.2s;
+  flex-shrink: 0;
+}
+
+.copy-btn:hover {
+  color: var(--accent);
+}
+
+.copy-btn.copied {
+  color: var(--accent);
+}
+
 /* ── SCROLL ANIMATIONS ── */
 .fade-in {
   opacity: 0;
@@ -489,12 +529,12 @@ blockquote cite {
   .nav-links a      { font-size: 0.8rem; }
 
   #hero             { padding: 100px 6% 60px; }
-  .hero-content h1  { font-size: clamp(2.8rem, 11vw, 5rem); }
+  .hero-content h1  { font-size: clamp(2.8rem, 11vw, 5rem); white-space: normal; }
 
   .container        { padding: 0 24px; }
 
-  /* Cards: show SVGs repositioned to bottom */
-  .card             { padding: 100px 6% 180px; align-items: flex-start; }
+  /* Cards: auto height so no gap between text and SVG */
+  .card             { padding: 100px 6% 60px; align-items: flex-start; min-height: auto; }
   .card h2          { font-size: clamp(2.2rem, 9vw, 3.5rem); }
   .card p           { font-size: 1rem; max-width: 100%; }
   .card-bg-deco {
@@ -529,9 +569,11 @@ blockquote cite {
   .bio              { font-size: 0.93rem; }
 
   /* Testimonials */
+  #resenas          { display: block; padding: 80px 0 60px; min-height: unset; }
   #resenas h2       { font-size: clamp(1.6rem, 6vw, 2.2rem); }
 
   /* Contact */
+  #contacto         { display: block; padding: 80px 0 60px; min-height: unset; }
   #contacto h2      { font-size: clamp(2rem, 8vw, 3rem); }
   .link-label       { width: 60px; font-size: 0.65rem; }
 }
