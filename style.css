@@ -518,7 +518,7 @@ blockquote cite {
   .container        { padding: 0 24px; }
 
   /* Cards: SVG anchored bottom-left */
-  .card.snap-section  { min-height: auto; align-items: flex-start; padding: 100px 6% 210px; }
+  .card.snap-section  { align-items: flex-start; padding: 100px 6% 210px; }
   .card h2            { font-size: clamp(2.2rem, 9vw, 3.5rem); }
   .card p             { font-size: 1rem; max-width: 100%; }
   .card-bg-deco       { left: 6%; right: auto; top: auto; bottom: 20px; width: 60%; transform: none; color: rgba(78, 205, 196, 0.28); }
