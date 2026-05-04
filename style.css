@@ -522,7 +522,7 @@ blockquote cite {
   .card h2          { font-size: clamp(2.2rem, 9vw, 3.5rem); }
   .card p           { font-size: 1rem; max-width: 100%; }
   .card-bg-deco     { display: block; position: absolute; top: 58%; left: 6%; right: auto; transform: none; width: 72%; }
-  .card-bg-seq      { display: flex; top: 52%; bottom: 0; left: 0; right: 0; width: 100%; padding: 0 6%; }
+  .card-bg-seq      { display: flex; top: 56%; bottom: 48px; left: 0; right: 0; width: 100%; padding: 0 6%; }
 
   /* About: single column, no forced height centering */
   #sobre-mi         { display: block; padding: 100px 0 70px; min-height: unset; }
