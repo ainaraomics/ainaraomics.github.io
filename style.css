@@ -521,9 +521,8 @@ blockquote cite {
   .card             { padding: 100px 6% 60px; align-items: flex-start; }
   .card h2          { font-size: clamp(2.2rem, 9vw, 3.5rem); }
   .card p           { font-size: 1rem; max-width: 100%; }
-  .card-bg-deco     { display: block; position: absolute; bottom: 48px; right: 6%; top: auto; transform: none; width: 60%; }
+  .card-bg-deco     { display: block; position: absolute; top: 58%; left: 50%; right: auto; transform: translateX(-50%); width: 72%; }
   .card-bg-seq      { display: none; }
-  .card::after      { content: ''; position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px); background-size: 28px 28px; pointer-events: none; }
 
   /* About: single column, no forced height centering */
   #sobre-mi         { display: block; padding: 100px 0 70px; min-height: unset; }
